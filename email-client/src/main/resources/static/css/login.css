@@ -1,0 +1,43 @@
+/* ... (уже существующие стили) */
+
+#login {
+    background-color: #3498db;
+    color: #fff;
+    padding: 0.5em; /* Уменьшили отступы */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 2em auto; /* Центрирование по горизонтали */
+    max-width: 300px; /* Уменьшили максимальную ширину формы */
+}
+
+#login h2 {
+    margin-bottom: 0.5em;
+}
+
+#loginForm {
+    display: grid;
+    gap: 1em;
+}
+
+#loginForm label {
+    font-weight: bold;
+}
+
+#loginForm input {
+    width: 100%;
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+#loginForm button {
+    background-color: #fff;
+    color: #3498db;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#loginForm button:hover {
+    background-color: #ddd;
+}

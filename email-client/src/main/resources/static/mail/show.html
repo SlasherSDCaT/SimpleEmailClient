@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Почтовый клиент</title>
+    <!-- Подключаем jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Подключаем стили -->
+    <link rel="stylesheet" href="/static/css/show.css"/>
+</head>
+<body>
+
+<!-- Шапка страницы -->
+<header>
+    <h1>Почтовый клиент</h1>
+    <!-- Место для вывода имени пользователя или другой информации -->
+    <div id="user-info">
+    </div>
+</header>
+
+<!-- Основное содержимое страницы -->
+<!-- Основное содержимое страницы -->
+<main>
+
+    <!-- Первая часть главной страницы -->
+    <section id="sidebar">
+        <div id="send-message-button">
+            <button type="button">Отправить сообщение</button>
+        </div>
+        <div id="account-list">
+            <h3>Учетные записи</h3>
+            <ul id="authorized-accounts">
+                <li>egor.belosludtsev@mail.com</li>
+            </ul>
+            <!-- Кнопка для добавления новой учетной записи -->
+            <button id="add-account-button" onclick="openLoginPage()">Добавить учетную запись</button>
+        </div>
+        <div id="folders">
+            <h3>Папки</h3>
+            <ul id="folder-list">
+                <li onclick="showFolder('inbox')">Входящие</li>
+                <li onclick="showFolder('sent')">Исходящие</li>
+                <li onclick="showFolder('starred')">Помеченные</li>
+            </ul>
+        </div>
+    </section>
+    <section id="content">
+        <!-- Поисковая строка и кнопка "Поиск" -->
+        <div id="search-bar">
+            <input type="text" placeholder="Введите текст для поиска"/>
+            <button onclick="search()">Поиск</button>
+        </div>
+
+        <!-- Название выбранной папки и кнопки сортировки -->
+        <div id="folder-info">
+            <h3>Выбранная папка: <span id="selected-folder">Входящие</span></h3>
+            <button onclick="sortByDate()">Сортировать по дате</button>
+            <button onclick="sortByName()">Сортировать по имени</button>
+        </div>
+
+        <!-- Блоки с сообщениями -->
+        <div id="messages">
+            <!-- Пример блока с сообщением -->
+            <div class="message-block">
+                <h4>2 декабря 2023 г.</h4>
+                <p>Email отправителя: example@example.com</p>
+                <p>Содержание сообщения: Hello world..</p>
+            </div>
+            <div class="message-block">
+                <h4>5 декабря 2023 г.</h4>
+                <p>Email отправителя: belka@gmail.com</p>
+                <p>Содержание сообщения: I'm fine, and u?...</p>
+            </div>
+            <!-- Другие блоки с сообщениями будут добавлены динамически -->
+        </div>
+    </section>
+
+    <section id="message-details">
+        <div id="sender-email">
+            <h2>Email отправителя: belka@gmail.com</h2>
+        </div>
+        <div id="message-info">
+            <p class="message-date">01.04.2023 14:30</p>
+            <p class="recipient-email">Email получателя: egor.belosludtsev@mail.com</p>
+        </div>
+        <div id="message-content">
+            <p class="message-text">I’m fine, and u? And remember, I’ll come on the fourth day, from the east Wait for me and don’t go anywhere</p>
+        </div>
+    </section>
+
+</main>
+<script src="/static/js/setupHeader.js"></script>
+<script>
+    function openLoginPage() {
+        // Перенаправление на страницу авторизации
+        window.location.href = "/emailTh/login";
+    }
+</script>
+
+
+
+<!-- Подключаем скрипт с jQuery -->
+<!--<script>-->
+<!--    $(document).ready(function () {-->
+<!--        function login() {-->
+<!--            var email = $("#email").val();-->
+<!--            var password = $("#password").val();-->
+
+<!--            $.ajax({-->
+<!--                type: "POST",-->
+<!--                url: "/login",-->
+<!--                contentType: "application/json",-->
+<!--                data: JSON.stringify({-->
+<!--                    email: email,-->
+<!--                    password: password-->
+<!--                }),-->
+<!--                success: function (data) {-->
+<!--                    var token = data.token;-->
+<!--                    document.cookie = "jwt=" + token;-->
+<!--                    location.reload();-->
+<!--                },-->
+<!--                error: function (error) {-->
+<!--                    console.error('Error:', error);-->
+<!--                }-->
+<!--            });-->
+<!--        }-->
+
+<!--        // Функция для извлечения JWT токена из куки-->
+<!--        function getJwtToken() {-->
+<!--            var name = "jwt=";-->
+<!--            var decodedCookie = decodeURIComponent(document.cookie);-->
+<!--            var cookies = decodedCookie.split(';');-->
+<!--            for (var i = 0; i < cookies.length; i++) {-->
+<!--                var cookie = cookies[i].trim();-->
+<!--                if (cookie.indexOf(name) === 0) {-->
+<!--                    return cookie.substring(name.length, cookie.length);-->
+<!--                }-->
+<!--            }-->
+<!--            return "";-->
+<!--        }-->
+
+<!--        // Пример использования токена в заголовке запроса-->
+<!--        $.ajax({-->
+<!--            type: "GET",-->
+<!--            url: "/example-endpoint",-->
+<!--            headers: {-->
+<!--                "Authorization": "Bearer " + getJwtToken()-->
+<!--            },-->
+<!--            success: function (data) {-->
+<!--                console.log('Data:', data);-->
+<!--            },-->
+<!--            error: function (error) {-->
+<!--                console.error('Error:', error);-->
+<!--            }-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
+
+</body>
+</html>

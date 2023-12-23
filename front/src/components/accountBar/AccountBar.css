@@ -1,0 +1,158 @@
+.accountBar {
+    width: 20%;
+    height: 100%;
+    background-color: #3498db;
+    color: #fff;
+    padding: 1em;
+    border-radius: 0 8px 8px 0;
+    margin-right: 15px;
+}
+
+.button {
+    width: 100%;
+    font-weight: bold;
+    font-size: 1em;
+    padding: .8em 1em;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.buttonMessage {
+    background-color: #fff;
+    color: black;
+}
+
+.buttonMessage:active {
+    background-color: lightgray;
+}
+.buttonAccount {
+    margin-top: 15px;
+    background-color: #282828;
+    color: white;
+}
+
+.buttonAccount:active {
+    background-color: #505050;
+}
+
+.accountBar h3 {
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+.email {
+    font-size: 1.4em;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin: 8px;
+}
+
+.email.active {
+    font-weight: bold;
+}
+.email.active::before {
+    content: "▶ ";
+    color: black;
+}
+
+.folder {
+    background-color: #4ecec3; /* Зеленый цвет фона */
+    color: #fff; /* Белый цвет текста */
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 1em; /* Добавим отступ сверху для разделения от предыдущего блока */
+}
+
+.folder-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.folder h3 {
+    margin: 10px;
+}
+
+.folder-list li {
+    cursor: pointer;
+    padding: 0.5em;
+    border-radius: 4px;
+    margin-bottom: 0.5em;
+    background-color: #3498db; /* Цвет фона при наведении на пункт */
+    font-size: 1.2em;
+}
+
+.folder-list li:hover {
+    background-color: #2980b9; /* Цвет фона при наведении на пункт */
+}
+
+
+.modal {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left:0;
+}
+
+.modal-place {
+    height: 100%;
+    width: 100%;
+    background-color: #505050;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 90;
+}
+
+.modal-content {
+    position: absolute;
+    z-index: 100;
+    background-color: #3498db;
+    width: 500px;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+}
+
+.modal-content h2 {
+    margin-left: 20px;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+
+.modal-content form input, .modal-content form textarea {
+    font-size: 1em;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.modal-content form textarea {
+    resize: none;
+    height: 100px;
+}
+.modal-content form button {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    height: 40px;
+}
+
+.modal-content form button:hover {
+    background-color: #bebebe;
+}
+
+.modal-content form div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sendMessageButton {
+    width: 200px;
+}

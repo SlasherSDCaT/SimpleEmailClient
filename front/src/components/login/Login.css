@@ -1,0 +1,65 @@
+.loginPage {
+    margin: 50px auto;
+    width: 600px;
+    background-color: #3498db;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 2em 1em;
+    color: white;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginPage h2 {
+    font-size: 2.5em;
+    margin: 10px 0;
+}
+
+.loginForm label {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.loginForm input {
+    height: 40px;
+    font-size: 1.3em;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.loginForm button {
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.loginForm button:active {
+    background-color: #bebebe;
+}
+
+.loginForm div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancel  {
+    background-color: #ff8080;
+    color: white;
+    width: 30%;
+}
+
+.sumbits {
+  width: 60%;
+ }
+
+.loginForm p {
+    font-size: 1.2em;
+    color: #ffcdcd;
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/{id}/message(id=${emailAccount.getId()})}" th:object="${message}">
+    <label for="emailReceiver">Enter emailReceiver:</label>
+    <input type="text" th:field="*{emailReceiver}" id="emailReceiver">
+    <br>
+    <label for="content">Enter content:</label>
+    <input type="text" th:field="*{content}" id="content">
+    <br>
+    <br>
+    <input type="submit" value="Send the message">
+</form>
+</body>
+</html>

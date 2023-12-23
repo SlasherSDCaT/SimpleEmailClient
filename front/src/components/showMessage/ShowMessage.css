@@ -1,0 +1,97 @@
+.showMessage {
+    width: 30%;
+    height: 100%;
+    background-color: white;
+    color: black;
+    padding: 1em;
+    border-radius: 8px;
+    overflow: auto;
+}
+
+.search-bar {
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-bar input {
+    width: 70%; /* 70% ширины блока */
+    padding: 0.5em;
+    margin-right: 1%; /* Отступ между input и кнопкой */
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.search-bar button {
+    width: 28%; /* 28% ширины блока */
+    padding: 0.5em;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.folder-info {
+    margin-bottom: 1em;
+}
+
+.folder-info h3 {
+    margin-bottom: 0.5em;
+}
+
+.messages {
+    /* Оставим стили для блоков с сообщениями гибкими, так как они будут добавляться динамически */
+}
+
+.message-block {
+    margin-bottom: 1em;
+    border: 1px solid #ccc; /* Рамка серого цвета */
+    padding: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+}
+.message-block.active {
+    background-color: #e2e6ff;
+}
+
+.message-block h4 {
+    margin-bottom: 0.5em;
+}
+
+.folder-info button {
+    margin-right: 1em;
+    padding: 0.5em .7em;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 1em;
+}
+
+.folder-info button:hover {
+    background-color: #2980b9;
+}
+
+.messageContext {
+    width: 500px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.svgshka {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 20;
+}
+
+.svgshka path {
+    fill: #cbcbcd;
+}
+
+.svgshka.active path {
+    fill: #2424f0;
+}
